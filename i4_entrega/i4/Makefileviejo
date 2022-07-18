@@ -1,0 +1,73 @@
+CC	:= gcc
+CCFLAGS	:= -Wall -pedantic -g -ansi
+
+IFLAGS=-I./
+LDFLAGS=-L./
+LDLIBS=-lscreen
+
+# TEST=space_test.c
+
+EXEJUEGONAME:= juego
+EXE		:= $(EXEJUEGONAME)
+ARGS 	:= hormiguero.dat
+
+VFLAGS	:= -s --leak-check=full --track-origins=yes
+
+SRCS := $(wildcard *.c)
+
+TESTSRCS:= $(wildcard *_test.c)
+TESTEXE:= $(TESTSRCS:%.c=%)
+
+RECALLMAKEARGS:=TEST=
+
+SRCS := $(filter-out $(TESTSRCS), $(SRCS))
+
+SRC-DIR:=./src
+INCLUDE-DIR:=./include
+OBJ-DIR:=./obj
+LIB-DIR:=./lib
+DOC-DIR:=./doc
+
+ifdef TEST
+	EXE = $(TEST:%.c=%)
+	SRCS := $(filter-out game_loop.c, $(SRCS))
+	SRCS += $(TEST)
+endif
+
+OBJS := $(SRCS:%.c=%.o) 
+#####################################################
+# .EXE
+#####################################################
+$(EXE) : $(OBJS) *.a
+	$(CC) -o $@ $(CCFLAGS) $^ $(LDFLAGS) $(LDLIBS) $(LIBS)
+
+$(TESTEXE):
+	make $(addsuffix .c, $(addsuffix $@, $(RECALLMAKEARGS))) TESTEXE=
+
+#####################################################
+# .o
+#####################################################
+
+deps:= $(patsubst %.o, %.d, $(OBJS))
+-include $(deps)
+DEPFLAGS = -MMD -MF $(@:.o=.d)
+
+%.o: %.c
+	$(CC) -c $(CCFLAGS) $< $(DEPFLAGS)
+
+#####################################################
+# function
+#####################################################
+.PHONY: all clear run valgrind
+
+all: $(EXE)
+
+clear:
+
+	rm -f *.o *.d $(EXEJUEGONAME) $(wildcard *_test)
+
+run: $(EXE)
+	./$< $(ARGS)
+
+valgrind: $(EXE)
+	valgrind $(VFLAGS) ./$< $(ARGS) --log-file=valgrind.log

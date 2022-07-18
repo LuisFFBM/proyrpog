@@ -1,0 +1,67 @@
+#s:11|Entrada|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|  _____  | /     \ |[       ]| \     / |  \   /  |
+#s:121|Pasillo1|esto es un espacio mazo de espacioso con mazo de movidas tope |   ___  _|\ \ ___  |\   mo'\_|\ @ _    | \__/ \__|
+#s:122|Pasillo2|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|  ___   _|_/   \_/ |     o O |mo'_ 0o8o|__/ \   /|
+#s:123|Pasillo3|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|    V    |  \(")/  |  -(_)-  |o/(_-_)\o|o o\_/o o|
+#s:124|Pasillo4|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|  ___    |_/   \__ |    o o )|mo^ _ 0o]|__/ \___)|
+#s:13|Despensa|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|         |         |         |         |_________|
+#s:125|Pasillo5|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|  ___   _|_/   \_/ |         |mo'_ 0o8o|__/ \___/|
+#s:126|Pasillo6|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|  ___   _|_/   \_/ |    o  O |         |__/ \___/|
+#s:127|Pasillo7|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|  ___    |_/   \__ |    o  O |         |__/ \___/|
+#s:14|Agujero|esto es un espacio mazo de espacioso con mazo de movidas tope de tochas que no comprenderias|  ___    |_/   \__ |    o o )|mo^ _ 0o]|__/ \___)|
+
+#o:21|Grano|Gana juegos es increible|1|-1|-1|0|0|11
+#o:22|Biblia|deskripcion|1|24|-1|0|0|121
+#o:23|Tabaco|deskripcion|1|27|-1|0|0|122
+#o:24|KETA|deskripcion|1|-1|-1|0|0|123
+#o:25|Amor|deskripcion|0|41|-1|0|0|124
+#o:26|Goma2|deskripcion|1|-1|-1|0|0|123
+#o:27|Mechero|deskripcion|1|-1|-1|0|0|125
+#o:28|Alicates|deskripcion|1|-1|-1|0|0|126
+#o:29|KoktelMolotov|deskripcion|1|-1|-1|0|0|127
+#o:30|Tejno_Unch_Unch_Unch_KRIKRIKRI|deskripcion|0|-1|-1|0|0|14
+#o:31|Tussi|deskripcion|1|-1|-1|0|0|11
+#o:32|Juan|deskripcion|0|-1|-1|0|0|121
+#o:33|Destornillador|deskripcion|1|-1|-1|0|0|122
+#o:34|Poper|deskripcion|1|-1|-1|0|0|123
+#o:35|Harina|deskripcion|1|21|-1|0|0|124
+#o:36|La_Fe|deskripcion|0|22|-1|0|0|13
+#o:37|ELEKTROLATINOOOOOOO|deskripcion|0|38|-1|0|0|125
+#o:38|Espizzzzzzzzzz|deskripcion|1|-1|-1|0|0|126
+#o:39|Emociones|deskripcion|0|-1|-1|0|0|127
+#o:40|Aqui_No_Hay_kien_viva_TEMPORADA3|deskripcion|1|TODOOOOOO|-1|0|0|14
+#o:41|EME|deskripcion|1|-1|-1|0|0|11
+
+#p:1|Vanessa|11|5|3|
+
+#l:31|Entrada|11|121|1|1|
+#l:311|P1-E|121|11|0|1|
+#l:312|P1-P2|121|122|1|1|
+#l:321|P2-P1|122|121|0|1|
+#l:322|P2-P3|122|123|1|1|
+#l:323|P2-P5|122|125|2|1|
+#l:331|P3-P2|123|122|0|1|
+#l:332|P3-P4|123|124|1|0|
+#l:341|P4-P3|124|123|0|1|
+#l:342|P4-D|124|13|1|1|
+#l:301|Despensa|13|124|0|1|
+#l:351|P5-P6|125|126|2|1|
+#l:352|P5-P2|125|122|3|1|
+#l:361|P6-P7|126|127|2|1|
+#l:362|P6-P5|126|125|3|1|
+#l:371|P7-A|127|14|2|1|
+#l:372|P7-P6|127|126|3|1|
+#l:302|Agujero|14|127|3|1|
+#l:303|Agujero-D|14|13|1|1|
+
+
+#m:unknown|0|9|Introduce un comando válido.|Comando desconocido.|Serás zopenco... ¡Ese comando no vale!|
+#m:exit|1|121|11|0|1|
+#m:move|0|5|1|1|
+#m:take|P2-P1|122|121|0|1|
+#m:drop|P2-P3|122|123|1|1|
+#m:attack|P2-P5|122|125|2|1|
+#m:inspect|P3-P2|123|122|0|1|
+#m:save|P3-P4|123|124|1|0|
+#m:load|P4-P3|124|123|0|1|
+#m:turnon|P4-D|124|13|1|1|
+#m:turnoff|Despensa|13|124|0|1|

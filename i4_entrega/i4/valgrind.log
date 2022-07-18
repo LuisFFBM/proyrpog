@@ -1,0 +1,14 @@
+==5261== Memcheck, a memory error detector
+==5261== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==5261== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==5261== Command: ./juego hormiguero.dat
+==5261== Parent PID: 5211
+==5261== 
+==5261== 
+==5261== HEAP SUMMARY:
+==5261==     in use at exit: 0 bytes in 0 blocks
+==5261==   total heap usage: 104 allocs, 104 frees, 105,492 bytes allocated
+==5261== 
+==5261== All heap blocks were freed -- no leaks are possible
+==5261== 
+==5261== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
