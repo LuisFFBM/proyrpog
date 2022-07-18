@@ -1,0 +1,71 @@
+#s:11|Entrada|Entrada: aqui se entra y hay una tele|tal vez haya algo interesante para reproducir en la tele, encuentralo|1|  _____  | /     \ |[       ]| \     / |  \   /  |
+#s:12|Pasillo1|Pasillo1: abra pasado Monica por aqui?|sigue adelante y tal vez encuentres a monica, debaras enfrentar tus miedos para sobrevivir|0|   ___  _|\ \ ___  |\   mo'\_|\ @ _    | \__/ \__|
+#s:13|Enemigo|MONICA|derrotala para poder seguir adelante, usa el attack|1|    V    |  \(")/  |  -(_)-  |o/(_-_)\o|o o\_/o o|
+#s:14|CuartoVane|Cuarto de la vane: Aqui vivia yo|que recuerdos, aquel antiguo cuarto esta tal y como lo dejo la vane antes de salir|1|  ___   _|_/   \_/ |     o O |mo'_ 0o8o|__/ \   /|
+#s:15|Pasillo2|Pasillo2: Por aqui se va a la despensa|corre a por los granos de polen, para ganar necesitars el grano idicado|0|   ___  _|\ \ ___  |\   mo'\_|\ @ _    | \__/ \__|
+#s:16|Despensa|Aqui van los granos|felicidades, has encontrado los granos, sigue asi ya falta poco|1|E       3|E  3UE  3|E  3-E  3|E  3-E  3| UUE-3UU |
+#s:17|Pasillo3|Pasillo poco espectacular|es un pasillo desolado y esta totalmente aburrida|1|   ___  _|\ \ ___  |\   mo'\_|\ @ _    | \__/ \__|
+#s:18|Pasillo4|Que oscuro esta esto!|necesitaras algun objecto para alumbrar en esta oscuridad|0|   ___  _|\ \ ___  |\   mo'\_|\ @ _    | \__/ \__|
+#s:19|Pasillo5|Lo recordaba mas amplio|el camino se esta estrechando y cuesta respirar|0|   ___  _|\ \ ___  |\   mo'\_|\ @ _    | \__/ \__|
+#s:110|Trastero|Aqui habia herramientas|tal vez encuentros algo de utilidad aqui, busca bien a tu alrededor|1|  ___    |_/   \__ |    o o )|mo^ _ 0o]|__/ \___)|
+#s:111|CuartoJuan|Huele a disolvente...|que estara tramando juan en su cuarto?|0|  ___    |_/   \__ |    o o )|mo^ _ 0o]|__/ \___)|
+
+#o:21|Grano|Simplemente increible gana juegos|1|-1|-1|0|0|15|
+#o:22|GranoGrande|No puedes llevarlo siendo grande|1|25|-1|0|0|19|
+#o:23|GranoAtascado|Debes buscar la forma de sacarlo de ahi|1|28|-1|0|0|110|
+#o:24|GranoPegado|Como puedes eliminar el pegamento?|1|26|-1|0|13|
+#o:25|RayoEncogedor|Hace un objeto grande pequenio increible!|1|-1|-1|0|0|16|
+#o:26|Disolvente|Disuelve pegamento|1|-1|-1|0|0|111|
+#o:27|Llave|Abre puertas|1|-1|311|0|0|13|
+#o:28|WD40|Hace que cosas se muevan|1|-1|-1|0|0|14|
+#o:29|MartilloBule|Rompe cristal,comun en buses|1|-1|35|0|0|110|
+#o:210|Goma2|Fuerte explosivo,necesitaras un detonador|1|211|39|0|0|12|
+#o:211|Detonador|Usado para detonar explosivos,necesitaras protegerte|1|212|-1|0|0|14|
+#o:212|Chalecoantiabalas|Usado para protegerse de explosiones|1|-1|0|0|18|
+#o:213|PolvoBlanco|Acelera el sistema nervioso y da vision|1|-1|-1|1|1|16|
+#o:214|Linterna|Da luz pero necesita pilas|1|215|-1|1|0|111|
+#o:215|Pilas|Dan electricidad|1|-1|-1|0|0|17|
+#o:216|Estatua|No puedes moverla pero es bonita, pero esta bonita|0|-1|-1|0|0|12|
+#o:217|Pan|Necesitas mas fuerza para moverlo|0|-1|-1|0|0|11|
+#o:218|Tele|Reproduce contenido audiovisual|1|219|-1|1|0|11|
+#o:219|Reproductor|Reproduce DvDs|1|220|-1|0|0|15|
+#o:220|LQSAT3|La Que Se Avecina Temporada 3|1|-1|-1|0|0|17|
+
+#p:1|Vanessa|11|7|3|
+
+#e:2|Monica|13|5
+
+#l:id|name|origen|destino|direccion|estado|
+
+#l:31|Ent-P1|11|12|1|1|
+#l:32|P1-Ent|12|11|0|1|
+#l:33|P1-E|12|13|1|1|
+#l:34|E-P1|13|12|0|1|
+#l:35|E-CV|13|14|1|0|
+#l:36|CV-E|14|13|0|1|
+#l:37|E-P2|13|15|3|1|
+#l:38|P2-E|15|13|2|1|
+#l:39|P2-Des|15|16|1|0|
+#l:310|Des-P2|16|15|0|1|
+#l:311|E-P3|13|17|2|0|
+#l:312|P3-E|17|13|3|1|
+#l:313|P3-P4|17|18|2|1|
+#l:314|P4-P3|18|17|3|1|
+#l:315|P4-CJ|18|111|1|1|
+#l:315|CJ-P4|111|18|0|1|
+#l:316|P4-P5|18|19|0|1|
+#l:317|P5-P4|19|18|1|1|
+#l:318|P5-T|19|110|0|1
+#l:319|T-P5|110|19|1|1
+
+#m:unknown|0|9|Introduce un comando válido.|Comando desconocido.|Serás zopenco... ¡Ese comando no vale!|
+#m:exit|1|121|11|0|1|
+#m:move|0|5|1|1|
+#m:take|P2-P1|122|121|0|1|
+#m:drop|P2-P3|122|123|1|1|
+#m:attack|P2-P5|122|125|2|1|
+#m:inspect|P3-P2|123|122|0|1|
+#m:save|P3-P4|123|124|1|0|
+#m:load|P4-P3|124|123|0|1|
+#m:turnon|P4-D|124|13|1|1|
+#m:turnoff|Despensa|13|124|0|1|
